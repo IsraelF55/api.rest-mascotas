@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nombre": "Laika",
+    "edad": 1,
+    "raza": "Alaskan"
+  },
+  {
+    "id": 2,
+    "nombre": "Daisy",
+    "edad": 2,
+    "raza": "Half-breed"
+  },
+  {
+    "nombre": "test",
+    "edad": "5",
+    "raza": "Chihuahua",
+    "id": 3
+  }
+]

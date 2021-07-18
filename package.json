@@ -1,0 +1,15 @@
+{
+  "name": "api-hackademy",
+  "version": "1.0.0",
+  "description": "Elaborada en el proceso de seleccion de beca Hackademy. API para crear y eliminar mascotas.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "author": "Israel Flores",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  }
+}
