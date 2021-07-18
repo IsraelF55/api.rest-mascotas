@@ -33,7 +33,7 @@ router.post('/', (req,res) => {
     // Actualizacion
     try {
       const datos = JSON.stringify(mascotas, null, 4);
-      fs.writeFileSync('./bd.json', datos, 'utf8');
+      fs.writeFileSync(filePath, datos, 'utf8');
       res.send('Guardado')
     } catch (err) {
       console.log(`Se obtuvo un error al momento de la escritura: ${err}`);
@@ -56,7 +56,7 @@ router.delete('/:id', (req,res) => {
       // Actualizacion
       try {
         const datos = JSON.stringify(mascotas, null, 4);
-        fs.writeFileSync('./bd.json', datos, 'utf8');
+        fs.writeFileSync(filePath, datos, 'utf8');
         terminado = true
         actualizarBD()
         res.send('Eliminado')
