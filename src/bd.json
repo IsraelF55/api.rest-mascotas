@@ -12,9 +12,9 @@
     "raza": "Half-breed"
   },
   {
+    "id": 3,
     "nombre": "Leslie",
     "edad": "5",
-    "raza": "Chihuahua",
-    "id": 3
+    "raza": "Chihuahua"
   }
 ]
