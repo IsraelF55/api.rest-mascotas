@@ -11,5 +11,6 @@ El proyecto permite las siguientes solicitudes:
 * POST /api/mascotas
 * DELETE /api/mascotas/:id
 
+- Nota. El método POST puede recibir los campos nombre, edad y raza, siendo nombre el unico valor requerido para realizar correctamente la operación.
 ***
 El proyecto tiene licencia de uso libre.
