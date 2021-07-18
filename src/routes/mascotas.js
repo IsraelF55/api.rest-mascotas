@@ -6,6 +6,7 @@ const router = Router()
 let mascotas = ''
 filePath = path.join(__dirname, 'bd.json');
 
+// Funcion para lectura de bd.json
 const actualizarBD = () => {
   try {
     const datos = fs.readFileSync(filePath, 'utf8');
@@ -14,15 +15,16 @@ const actualizarBD = () => {
     console.log(`Se obtuvo un error al momento de la lectura de la BD: ${err}`);
   }
 }
-actualizarBD() //Me aseguro de actualizar la BD antes de seguir
 
 // Creo esta ruta para consultar el estado general de la "BBDD"
 router.get('/', (req,res) => {
+  actualizarBD()
   res.json(mascotas)
 })
 
 // En el metodo post solo encuentro necesario contar con un nombre
 router.post('/', (req,res) => {
+  actualizarBD()
   const { nombre } = req.body
   if (nombre) {
     let id = mascotas[mascotas.length - 1].id + 1
@@ -32,7 +34,6 @@ router.post('/', (req,res) => {
     try {
       const datos = JSON.stringify(mascotas, null, 4);
       fs.writeFileSync('./bd.json', datos, 'utf8');
-      actualizarBD()
       res.send('Guardado')
     } catch (err) {
       console.log(`Se obtuvo un error al momento de la escritura: ${err}`);
@@ -45,6 +46,7 @@ router.post('/', (req,res) => {
 
 // Ruta para la eliminacion por id
 router.delete('/:id', (req,res) => {
+  actualizarBD()
   const { id } = req.params
   let terminado = false
 
