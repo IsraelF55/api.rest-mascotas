@@ -5,10 +5,10 @@ const router = Router()
 
 let mascotas = ''
 filePath = path.join(__dirname, 'bd.json');
-console.log(filePath);
+
 const actualizarBD = () => {
   try {
-    const datos = fs.readFileSync('./bd.json', 'utf8');
+    const datos = fs.readFileSync(filePath, 'utf8');
     mascotas = JSON.parse(datos);
   } catch (err) {
     console.log(`Se obtuvo un error al momento de la lectura de la BD: ${err}`);
