@@ -5,7 +5,7 @@ const router = Router()
 let mascotas = ''
 const actualizarBD = () => {
   try {
-    const datos = fs.readFileSync('../bd.json', 'utf8');
+    const datos = fs.readFileSync('./bd.json', 'utf8');
     mascotas = JSON.parse(datos);
   } catch (err) {
     console.log(`Se obtuvo un error al momento de la lectura de la BD: ${err}`);
@@ -28,7 +28,7 @@ router.post('/', (req,res) => {
     // Actualizacion
     try {
       const datos = JSON.stringify(mascotas, null, 4);
-      fs.writeFileSync('../bd.json', datos, 'utf8');
+      fs.writeFileSync('./bd.json', datos, 'utf8');
       actualizarBD()
       res.send('Guardado')
     } catch (err) {
@@ -51,7 +51,7 @@ router.delete('/:id', (req,res) => {
       // Actualizacion
       try {
         const datos = JSON.stringify(mascotas, null, 4);
-        fs.writeFileSync('../bd.json', datos, 'utf8');
+        fs.writeFileSync('./bd.json', datos, 'utf8');
         terminado = true
         actualizarBD()
         res.send('Eliminado')
