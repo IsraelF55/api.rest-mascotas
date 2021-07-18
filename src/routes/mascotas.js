@@ -1,8 +1,11 @@
 const { Router } = require('express')
 const fs = require('fs')
+const path = require('path')
 const router = Router()
 
 let mascotas = ''
+filePath = path.join(__dirname, 'bd.json');
+console.log(filePath);
 const actualizarBD = () => {
   try {
     const datos = fs.readFileSync('./bd.json', 'utf8');
